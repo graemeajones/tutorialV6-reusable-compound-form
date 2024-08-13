@@ -1,0 +1,92 @@
+$BorderGrey: LightGrey;
+$RadioGrey: Grey;
+$Red: #edafb8; // Rose
+$DarkRed: darken($Red, 20%);
+$Green: #29e7cd; // Cyan
+$DarkGreen: darken($Green, 10%);
+
+div.Form {
+  width: 100%;
+  min-width: 300px;
+  padding: 20px;
+  border: 1px solid $BorderGrey;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  div.FormTray {
+    width: 100%;
+
+    div.FormItem {
+      margin-bottom: 10px;
+
+      label.FormLabel {
+        display: block;
+        font-weight: 600;
+      }
+
+      select,
+      input[type='text'],
+      div.FormRadioGroup {
+        display: block;
+        width: 100%;
+        padding: 3px;
+        margin: 1px 0;
+        font-size: 100%;
+        border-radius: 0px;
+        border: 1px solid $BorderGrey;
+        background: White;
+
+        &:hover,
+        &:focus,
+        &:focus-within {
+          outline-width: 1px;
+          outline-style: solid;
+          border-width: 1px;
+          border-style: solid;
+        }
+        &:hover {
+          border-color: $BorderGrey;
+          outline-color: $BorderGrey;
+        }
+
+        $Green: #29e7cd; // Cyan
+        $DarkGreen: darken($Green, 10%);
+
+        &:focus,
+        &:focus-within {
+          border-color: $DarkGreen;
+          outline-color: $DarkGreen;
+        }
+      }
+
+      div.FormRadioGroup {
+        color: $RadioGrey;
+
+        input[type='radio'] {
+          margin: 0 5px;
+
+          &:focus {
+            color: $DarkGreen;
+            outline-width: 1px;
+            outline-style: solid;
+            outline-color: $DarkGreen;
+          }
+        }
+      }
+
+      p.FormAdvice {
+        color: $DarkGreen;
+        font-weight: 400;
+        font-size: 90%;
+      }
+
+      p.FormError {
+        color: $DarkRed;
+        font-weight: 400;
+        font-size: 90%;
+      }
+    }
+  }
+}
